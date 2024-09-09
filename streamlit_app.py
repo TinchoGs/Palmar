@@ -4,9 +4,14 @@ import streamlit as st
 import pandas as pd
 from streamlit_gsheets import GSheetsConnection
 
+
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
 #df2 = conn.read(worksheet="Cotiza")
+
+
+
+
 
 # Initialize session state
 if 'df2' not in st.session_state:
@@ -46,3 +51,5 @@ else:
             st.success("Worksheet Updated ")
         except Exception as e:
             st.error("Error al subir datos: " + str(e))
+
+
