@@ -9,8 +9,7 @@ from streamlit_gsheets import GSheetsConnection
 conn = st.connection("gsheets", type=GSheetsConnection)
 #df2 = conn.read(worksheet="Cotiza")
 
-
-
+st.write(st.experimental_user.email)
 
 
 # Initialize session state
