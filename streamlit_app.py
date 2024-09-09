@@ -15,7 +15,7 @@ if st.experimental_user.email == "martinmansilla615@gmail.com":
 
         # Initialize session state
     if 'df2' not in st.session_state:
-        st.session_state.df2 = conn.read(worksheet="Cotiza")
+        st.session_state.df2 = conn.read(worksheet="martinmansilla615@gmail.com")
 
     # Input y botón
     id = st.text_input('id')
@@ -46,7 +46,7 @@ if st.experimental_user.email == "martinmansilla615@gmail.com":
         try:
             # Concatenar los nuevos datos con df2
             st.session_state.df2 = pd.concat([st.session_state.df2] + nuevos_datos, ignore_index=True)
-            conn.update(worksheet="Cotiza", data=st.session_state.df2)
+            conn.update(worksheet="martinmansilla615@gmail.com", data=st.session_state.df2)
             st.success("Worksheet Updated ")
         except Exception as e:
             st.error("Error al subir datos: " + str(e))
