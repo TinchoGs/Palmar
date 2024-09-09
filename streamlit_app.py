@@ -9,28 +9,27 @@ from streamlit_gsheets import GSheetsConnection
 conn = st.connection("gsheets", type=GSheetsConnection)
 #df2 = conn.read(worksheet="Cotiza")
 
-st.write(st.experimental_user)
+if st.experimental_user == "martinmansilla615@gmail.com":
 
+        # Initialize session state
+    if 'df2' not in st.session_state:
+        st.session_state.df2 = conn.read(worksheet="Cotiza")
 
-# Initialize session state
-if 'df2' not in st.session_state:
-    st.session_state.df2 = conn.read(worksheet="Cotiza")
+    # Input y botón
+    id = st.text_input('id')
+    nombre = st.text_input('nombre')
+    producto = st.text_input('producto')
+    precio = st.text_input('precio')
+    fecha = st.date_input('fecha')
 
-# Input y botón
-id = st.text_input('id')
-nombre = st.text_input('nombre')
-producto = st.text_input('producto')
-precio = st.text_input('precio')
-fecha = st.date_input('fecha')
+    # Lista para almacenar los nuevos datos
+    nuevos_datos = []
 
-# Lista para almacenar los nuevos datos
-nuevos_datos = []
-
-# Validar datos
-if not id or not nombre or not producto or not precio or not fecha:
-    st.error("Por favor, complete todos los campos")
-else:
-    subir_datos = pd.DataFrame({
+    # Validar datos
+    if not id or not nombre or not producto or not precio or not fecha:
+        st.error("Por favor, complete todos los campos")
+    else:
+        subir_datos = pd.DataFrame({
         'OrderID': [id],
         'CustomerName': [nombre],
         'ProductList': [producto],
@@ -39,7 +38,6 @@ else:
     })
 
  
-
     if st.button("mandar"):
         nuevos_datos.append(subir_datos)
 
@@ -50,5 +48,8 @@ else:
             st.success("Worksheet Updated ")
         except Exception as e:
             st.error("Error al subir datos: " + str(e))
+
+else: st.write("Logeate papa")
+
 
 
