@@ -5,7 +5,7 @@ import pandas as pd
 from streamlit_gsheets import GSheetsConnection
 
 st.sidebar
-st.sidebar.image("GSPc8mBWIAAHrda.jpg")
+
 
 
 # Create a connection object.
