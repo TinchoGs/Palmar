@@ -5,7 +5,7 @@ import pandas as pd
 from streamlit_gsheets import GSheetsConnection
 
 st.sidebar.title("B)")
-st.sidebar.image("C:\Users\Martin\Documents\GitHub\Palmar\images\GSPc8mBWIAAHrda.jpg")
+st.sidebar.image("GSPc8mBWIAAHrda.jpg")
 
 
 
