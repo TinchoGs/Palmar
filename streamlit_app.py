@@ -11,7 +11,7 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 
 st.write(st.experimental_user.email)
 
-if st.experimental_user == "martinmansilla615@gmail.com":
+if st.experimental_user.email == "martinmansilla615@gmail.com":
 
         # Initialize session state
     if 'df2' not in st.session_state:
