@@ -4,11 +4,6 @@ import streamlit as st
 import pandas as pd
 from streamlit_gsheets import GSheetsConnection
 
-st.sidebar.title("B)")
-st.image(".images\Capo.jpg")
-
-
-
 # Create a connection object.
 conn = st.connection("gsheets", type=GSheetsConnection)
 #df2 = conn.read(worksheet="Cotiza")
